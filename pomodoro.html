@@ -30,6 +30,7 @@
    
     <div class="container">
         <h1>Pomodoro Timer</h1>
+        <h2 id="timer-mode">Arbeitszeit</h2> <!-- Neue Überschrift für den Timer-Modus -->
         <div id="timer">25:00</div>
         <div class="controls">
             <button id="start">Start</button>
@@ -38,9 +39,14 @@
         </div>
     </div>
 
+
+    <!-- Audio Files -->
     <audio id="click-sound" src="click.mp3"></audio>
     <audio id="alarm-sound" src="alarm.mp3"></audio>
     
+
+
+    <!--Scripts-->
     <script src="scriptpomodoro.js"></script>  
     <script>
     function openNav() {
@@ -51,5 +57,6 @@
     document.getElementById("mySidenav").style.width = "0";
   }
     </script>   
+
 </body>
 </html>
