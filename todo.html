@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<div class="header">
+    <span style="font-size:30px;cursor:pointer;color:#ff6347;" onclick="openNav()">&#9776;</span>
+</div>
+
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="index.html">Back</a>
+    <a href="pomodoro.html">Pomodoro</a>
+    <a href="todo.html">ToDo</a>
+    <a href="#">...</a>
+  </div>
+
+<body>
+
+    <div id="myDIV" class="container">
+        <h2 style="margin:5px">My To Do List</h2>
+        <input type="text" id="myInput" placeholder="Title...">
+        <span onclick="newElement()" class="addBtn">Add</span>
+        <br>
+        <br>
+        <br>
+        <ul id="myUL">
+          </ul>
+
+      </div>
+
+     
+      <script src="script-todo.js"></script>  
+      <script>
+      function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+    }
+    
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+      </script>         
+</body>
+</html>
