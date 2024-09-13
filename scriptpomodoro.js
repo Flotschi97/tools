@@ -11,6 +11,11 @@ let timeLeft = pomodoroTime;
 let timerInterval;
 let isPaused = true;
 
+function playClickSound() {
+    clickSound.play();
+}
+
+
 function updateTimerDisplay() {
     let minutes = Math.floor(timeLeft / 60);
     let seconds = timeLeft % 60;
