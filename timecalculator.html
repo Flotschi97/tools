@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zeitaddierer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+
+
+
+    
+    <div class="header">
+        <span style="font-size:30px;cursor:pointer;color:#ff6347;" onclick="openNav()">&#9776;</span>
+    </div>
+    
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="index.html">Back</a>
+        <a href="pomodoro.html">Pomodoro</a>
+        <a href="todo.html">ToDo</a>
+        <a href="timecalculator.html">Zeitrechner</a>
+      </div>
+
+<body>
+    
+   
+   
+    <div class="container">
+        <h1>Zeitaddierer</h1>
+        <form id="timeForm">
+            <div class="time-row">
+                <input type="time" class="timeInput" step="1" value="00:00:00">
+            </div>
+            <div class="time-row">
+                <input type="time" class="timeInput" step="1" value="00:00:00">
+            </div>
+        </form>
+        
+        <button id="addTimeBtn">+ Zeit hinzufügen</button>
+        <button onclick="calculateTotalTime()">Berechne Summe</button>
+        <button onclick="resetTime()">Zurücksetzen</button>
+        <p id="result"></p>
+    </div>
+       
+
+
+        <!-- Audio Files -->
+    <audio id="click-sound" src="click.mp3"></audio>
+
+
+    <!--Scripts-->
+    <script src="timecalculator.js"></script>
+    <script>
+    function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+  }
+  
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+  }
+    </script>   
+
+</body>
+</html>

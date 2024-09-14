@@ -34,7 +34,6 @@ function showNotification(message) {
     if (Notification.permission === "granted") {
         new Notification("Pomodoro Timer", {
             body: message,
-            icon: "https://upload.wikimedia.org/wikipedia/commons/6/6d/Pomodoro.png"
         });
     }
 }
@@ -76,8 +75,7 @@ function startTimer() {
                     updateTimerMode(); // Modus auf Pausenzeit ändern
                     startBreakTimer(); // Starte den Pausentimer
                 } else {
-                    showNotification("Pause beendet! Zeit, weiterzuarbeiten.");
-                    alert("Pause ist zu Ende! Starte die nächste Arbeitsphase.");
+                    showNotification("Pause ist zu Ende! Starte die nächste Arbeitsphase.");
                     resetTimer(); // Timer zurücksetzen nach der Pause
                 }
             } else {
