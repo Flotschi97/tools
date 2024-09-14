@@ -1,5 +1,5 @@
 let timerDisplay = document.getElementById('timer');
-let timerModeDisplay = document.getElementById('timer-mode'); // Neue Variable für den Timer-Modus
+let timerModeDisplay = document.getElementById('timer-mode'); // Anzeige für den Timer-Modus
 let startButton = document.getElementById('start');
 let pauseButton = document.getElementById('pause');
 let resetButton = document.getElementById('reset');
@@ -13,6 +13,7 @@ let timeLeft = workTime;
 let timerInterval;
 let isPaused = true;
 let onBreak = false; // Flag, um zu bestimmen, ob wir uns in der Pause befinden
+let startTime = 0; // Zeitpunkt des Timerstarts
 
 // Anfrage für Benachrichtigungen
 if (Notification.permission === "default") {
@@ -33,7 +34,7 @@ function showNotification(message) {
     if (Notification.permission === "granted") {
         new Notification("Pomodoro Timer", {
             body: message,
-            icon: ""
+            icon: "https://upload.wikimedia.org/wikipedia/commons/6/6d/Pomodoro.png"
         });
     }
 }
@@ -45,7 +46,6 @@ function updateTimerDisplay() {
 }
 
 function updateTimerMode() {
-    // Aktualisiert die Anzeige des Timer-Modus
     if (onBreak) {
         timerModeDisplay.textContent = "Pausenzeit";
     } else {
@@ -57,17 +57,18 @@ function startTimer() {
     if (isPaused) {
         isPaused = false;
         playClickSound(); // Klick Sound beim Starten
+        startTime = Date.now(); // Setzt den Startzeitpunkt
         updateTimerMode(); // Modus aktualisieren
         timerInterval = setInterval(() => {
-            if (timeLeft > 0) {
-                timeLeft--;
-                updateTimerDisplay();
-            } else {
+            let now = Date.now();
+            let elapsed = Math.floor((now - startTime) / 1000); // Tatsächlich verstrichene Sekunden
+            timeLeft = (onBreak ? breakTime : workTime) - elapsed; // Berechnet verbleibende Zeit
+            
+            if (timeLeft <= 0) {
                 clearInterval(timerInterval);
                 alarmSound.play(); // Alarm Sound wenn der Timer endet
                 
                 if (!onBreak) {
-                    // Arbeitszeit endet, Pausentimer starten
                     showNotification("Arbeitszeit beendet! Zeit für eine Pause.");
                     timeLeft = breakTime; // 5 Minuten Pause starten
                     onBreak = true; // Wir befinden uns jetzt in der Pause
@@ -75,25 +76,32 @@ function startTimer() {
                     updateTimerMode(); // Modus auf Pausenzeit ändern
                     startBreakTimer(); // Starte den Pausentimer
                 } else {
-                    // Pausentimer endet
-                    showNotification("Pause ist zu Ende! Starte die nächste Arbeitsphase manuell");
+                    showNotification("Pause beendet! Zeit, weiterzuarbeiten.");
+                    alert("Pause ist zu Ende! Starte die nächste Arbeitsphase.");
                     resetTimer(); // Timer zurücksetzen nach der Pause
                 }
+            } else {
+                updateTimerDisplay();
             }
         }, 1000);
     }
 }
 
 function startBreakTimer() {
+    startTime = Date.now(); // Setzt den Startzeitpunkt für die Pause
     timerInterval = setInterval(() => {
-        if (timeLeft > 0) {
-            timeLeft--;
-            updateTimerDisplay();
-        } else {
+        let now = Date.now();
+        let elapsed = Math.floor((now - startTime) / 1000); // Tatsächlich verstrichene Sekunden
+        timeLeft = breakTime - elapsed; // Berechnet verbleibende Pausenzeit
+        
+        if (timeLeft <= 0) {
             clearInterval(timerInterval);
             alarmSound.play(); // Alarm Sound wenn die Pause endet
-            showNotification("Pause ist zu Ende! Starte die nächste Arbeitsphase.");
+            showNotification("Pause beendet! Zeit, weiterzuarbeiten.");
+            alert("Pause ist zu Ende! Starte die nächste Arbeitsphase.");
             resetTimer(); // Timer zurücksetzen nach der Pause
+        } else {
+            updateTimerDisplay();
         }
     }, 1000);
 }
