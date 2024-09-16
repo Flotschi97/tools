@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do Liste</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<div class="header">
+    <span style="font-size:30px;cursor:pointer;color:#ff6347;" onclick="openNav()">&#9776;</span>
+</div>
+
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="index.html">Back</a>
+    <a href="pomodoro.html">Pomodoro</a>
+    <a href="todo.html">ToDo</a>
+    <a href="timecalculator.html">Zeitrechner</a>
+    <a href="ticket.html">Ticketsystem</a>
+  </div>
+
+<body>
+
+    <div class="container">
+
+        <h1>Nächste Nummer: </h1>
+        <div id="counter">000</div>
+        <div>
+        <button onclick="decrementCounter()">Vorheriges Ticket</button>
+        <button onclick="incrementCounter()">Nächstes Ticket</button>
+        </div>
+        <button onclick="resetCounter()">Zurücksetzen</button>
+
+
+    </div>
+
+  
+
+  
+
+    
+   
+     
+      <script src="ticket.js"></script>  
+      <script>
+      function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+    }
+    
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+      </script>         
+</body>
+</html>

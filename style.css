@@ -45,6 +45,18 @@ body {
     margin-top: 550px;
 }
 
+.container3 {
+  text-align: center;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    width: 325px;
+    margin-top: 350px;
+}
+
+
 .toolstile {
   text-align: center;
     background-color: #fff;
@@ -281,4 +293,20 @@ button:hover {
 #result {
     margin-top: 20px;
     font-size: 18px;
+}
+
+
+
+
+/*Ticketcounter*/
+
+
+#counter {
+  font-size: 10em;
+  margin-bottom: 20px;
+  transition: color 0,5s;
+}
+
+.blink {
+  color: red;
 }
