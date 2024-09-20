@@ -39,6 +39,6 @@ function calculateTotalTime() {
 
 
 function resetTime() {
-    playClickSound(); //Klick-Sound abspielen
-    location.reload()
+    playClickSound();
+    location.reload();
 }

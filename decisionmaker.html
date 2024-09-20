@@ -24,27 +24,30 @@
 <body>
 
     <div class="container">
-
-        <h1>Nächste Nummer: </h1>
-        <div id="counter">000</div>
-        <div>
-        <button onclick="decrementCounter()">Vorheriges Ticket</button>
-        <button onclick="incrementCounter()">Nächstes Ticket</button>
+        <h1>Decision Maker</h1>
+        <div id="decision-fields">
+            <div class="decision-input">
+                <input type="text" placeholder="Option 1">
+            </div>
+            <div class="decision-input">
+                <input type="text" placeholder="Option 2">
+            </div>
         </div>
-        <button onclick="resetCounter()">Zurücksetzen</button>
-
-
+        <button id="add-field">+ Weitere Option hinzufügen</button>
+        <button id="decide-button">Los!</button>
+        <button onclick="resetDecision()">Zurücksetzen</button>
+        <div id="result"></div>
     </div>
+       
 
-  
+      </div>
 
-  
-
-    <audio id="bell-sound" src="bell-sound.mp3"></audio>
-    <audio id="click-sound" src="click.mp3"></audio>
-   
      
-      <script src="ticket.js"></script>  
+
+
+      <audio id="click-sound" src="click.mp3"></audio>
+     
+      <script src="decisionmaker.js"></script>  
       <script>
       function openNav() {
       document.getElementById("mySidenav").style.width = "250px";
