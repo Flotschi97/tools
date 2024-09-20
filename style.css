@@ -67,30 +67,6 @@ body {
 
 }
 
-
-
-
-.containertest {
-  
-  width: 80%;
-  text-align: center;
-  background-color: #fff;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  margin: 200px;
-}
-
-
-.oben {
-  background-color: #d0e6f5;
-}
-
-.unten {
-  
-  background-color: #f5d0d0;
-}
 .toolstile {
   text-align: center;
     background-color: #fff;
@@ -362,3 +338,8 @@ button:hover {
   font-size: 24px;
   font-weight: bold;
 }
+
+
+
+/*Contact*/
+
