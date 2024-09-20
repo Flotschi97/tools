@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zeitaddierer</title>
+    <title>Pomodoro-Timer</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -30,32 +30,21 @@
 <body>
     
    
-   
     <div class="container">
-        <h1>Zeitaddierer</h1>
-        <form id="timeForm">
-            <div class="time-row">
-                <input type="time" class="timeInput" step="1" value="00:00:00">
-            </div>
-            <div class="time-row">
-                <input type="time" class="timeInput" step="1" value="00:00:00">
-            </div>
-        </form>
-        
-        <button id="addTimeBtn">+ Zeit hinzufügen</button>
-        <button onclick="calculateTotalTime()">Berechne Summe</button>
-        <button onclick="resetTime()">Zurücksetzen</button>
-        <p id="result"></p>
+        <h1>Würfel Simulation</h1>
+        <div id="dice">🎲</div>
+        <button id="roll-button">Würfeln!</button>
+        <div id="result"></div>
     </div>
-       
+   
 
-
-        <!-- Audio Files -->
+    <!-- Audio Files -->
     <audio id="click-sound" src="click.mp3"></audio>
+    
 
 
     <!--Scripts-->
-    <script src="timecalculator.js"></script>
+    <script src="würfel.js"></script>  
     <script>
     function openNav() {
     document.getElementById("mySidenav").style.width = "250px";

@@ -41,8 +41,8 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: absolute;
-    width: 340px;
-    margin-top: 550px;
+    width: 380px;
+    margin-top: 600px;
 }
 
 .container3 {
@@ -343,4 +343,22 @@ button:hover {
 
 .blink {
   color: red;
+}
+
+
+
+
+
+/*Würfel*/
+
+#dice {
+  font-size: 100px;
+  margin-bottom: 20px;
+}
+
+
+#result {
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: bold;
 }
