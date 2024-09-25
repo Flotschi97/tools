@@ -95,8 +95,7 @@ function startBreakTimer() {
         if (timeLeft <= 0) {
             clearInterval(timerInterval);
             alarmSound.play(); // Alarm Sound wenn die Pause endet
-            showNotification("Pause beendet! Zeit, weiterzuarbeiten.");
-            alert("Pausenzeit zu Ende, für ein neues Intervall starte bitte den Timer erneut.");
+            showNotification("ausenzeit zu Ende, für ein neues Intervall starte bitte den Timer erneut.");
             resetTimer(); // Timer zurücksetzen nach der Pause
         } else {
             updateTimerDisplay();
